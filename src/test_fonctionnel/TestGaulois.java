@@ -15,8 +15,7 @@ public class TestGaulois {
 		// Partie 3 - TP1
 		Romain minus = new Romain("Minus", 6);
 		System.out.printf("Dans la forêt %s et %s tombent nez à nez sur le romain %s.", asterix.getNom(), obelix.getNom(), minus.getNom());
-		for(int i=0; i<3; ++i) {
-			asterix.frapper(minus);
-		}
+		for(int i=0; i<3; ++i) 
+			asterix.frapper(minus);	
 	}
 }
