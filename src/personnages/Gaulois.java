@@ -29,4 +29,11 @@ public class Gaulois {
 		return "Gaulois [nom=" + nom + ", force=" + force + "]";
 	}
 	
+	// ------- Partie 3 - TP1 ------- //
+	public void frapper(Romain romain) {
+		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
+		romain.recevoirCoup(force/3);
+	}
+	
+	
 }
