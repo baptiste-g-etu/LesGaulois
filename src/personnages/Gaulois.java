@@ -1,4 +1,5 @@
 package personnages;
+import objets.Village;
 
 public class Gaulois {
 	private String nom;
@@ -43,7 +44,13 @@ public class Gaulois {
 	public void boirePotion(int forcePotion) {
 		this.effetPotion = forcePotion;
 	}
-
+	
+	
+	// TP 2
+	public void setVillage(Village village) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }
