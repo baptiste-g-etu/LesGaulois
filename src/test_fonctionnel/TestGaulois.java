@@ -1,7 +1,6 @@
 package test_fonctionnel;
 
-import personnages.Gaulois;
-import personnages.Romain;
+import personnages.*;
 
 public class TestGaulois {
 	public static void main(String[] args) {
@@ -17,5 +16,16 @@ public class TestGaulois {
 		System.out.printf("Dans la forêt %s et %s tombent nez à nez sur le romain %s.", asterix.getNom(), obelix.getNom(), minus.getNom());
 		for(int i=0; i<3; ++i) 
 			asterix.frapper(minus);	
+		
+		// Partie 4 - TP1
+		System.out.println("\n--- Passage à la partie 4 ---\n");
+		Romain brutus = new Romain("Brutus", 14);
+		Druide panoramix = new Druide("Panoramix", 3);
+		panoramix.fabriquerPotion(4, 3);
+		panoramix.booster(obelix);
+		panoramix.booster(asterix);
+		for(int i=0; i<3; ++i) 
+			asterix.frapper(brutus);
+		
 	}
 }
