@@ -28,7 +28,7 @@ public class Village {
 	}
 	
 	public Gaulois trouverVillageois(int numVillageois) {
-		// Le premier villageois est le numéro 1
+		// Le premier villageois est le numéro 1, mais a l'indice 0 dans le tableau
 		if(villagois[numVillageois-1] != null) {
 			return villagois[numVillageois-1];
 		} else {
@@ -49,34 +49,34 @@ public class Village {
 	
 	public static void main(String[] args) {
 		Gaulois abraracourcix = new Gaulois("Abraracourcix", 6);
-		
 		Village village = new Village(abraracourcix, "Le village des irréductibles");
-
-		village.NB_MAX_VILLAGEOIS = 30;
 		
-		// Vérification
-		//Gaulois gaulois_test = village.trouverVillageois(30);
+		// Vérification de village.trouverVillageois()
+		assert village.trouverVillageois(30) == null;
 		
 		// Ajout d'un habitant
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		village.ajouterVillagois(asterix);
-		Gaulois gaulois = village.trouverVillageois(1);
-		System.out.println(gaulois);
-		gaulois = village.trouverVillageois(2);
-		System.out.println(gaulois);
-		System.out.println("------------------------------");
+		assert village.trouverVillageois(1) == asterix;
+		assert village.trouverVillageois(2) == null;
+		
+		//Gaulois gaulois_test = village.trouverVillageois(1);
+		//System.out.println(gaulois_test);
+		//gaulois_test = village.trouverVillageois(2);
+		//System.out.println(gaulois_test);
+		//System.out.println("------------------------------");
 		
 		
 		
 		// Test de gaulois.sePresenter()
-		
 		Gaulois obelix = new Gaulois("Obélix", 25);
 		village.ajouterVillagois(obelix);
 		Gaulois doublePolemix = new Gaulois("DoublePolemix", 4);
-				
+		// doublePolemix n'habite PAS dans le village
+		
 		village.afficherVillageois();
 		
-		//TODO : code plus opti ? Boucle sur les instance de Gaulois ?
+
 		asterix.sePresenter();
 		obelix.sePresenter();
 		

@@ -56,7 +56,7 @@ public class Gaulois {
 			parler("Je suis " + nom + ", chef du village de " + village.getNom() + ".");			
 		}
 		else {
-			parler("Je suis " + nom + " et j'habite le village :  " + village.getNom() + ".");
+			parler("Je suis " + nom + " et j'habite le village: " + village.getNom() + ".");
 		}
 	}
 	
