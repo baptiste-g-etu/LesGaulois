@@ -9,6 +9,11 @@ public class Village {
 	private int NB_MAX_VILLAGEOIS = 30;
 	private Gaulois[] villagois = new Gaulois[NB_MAX_VILLAGEOIS];
 	
+	public Village(Gaulois chef, String nom) {
+		this.chef = chef;
+		chef.village = this; // Associer le village au chef, sans ajouter le chef aux villageois
+		this.nom = nom;
+	}
 	
 	public String getNom() {
 		return this.nom;
@@ -45,20 +50,16 @@ public class Village {
 	public static void main(String[] args) {
 		Gaulois abraracourcix = new Gaulois("Abraracourcix", 6);
 		
-		//TODO : abraracourcix n'est pas encore le chef du village
-		Village village = new Village();
-		village.chef = abraracourcix;
-		
-		
-		village.nom = "Le village des irréductibles";
+		Village village = new Village(abraracourcix, "Le village des irréductibles");
+
 		village.NB_MAX_VILLAGEOIS = 30;
 		
 		// Vérification
 		//Gaulois gaulois_test = village.trouverVillageois(30);
 		
 		// Ajout d'un habitant
-		Gaulois Asterix = new Gaulois("Astérix", 8);
-		village.ajouterVillagois(Asterix);
+		Gaulois asterix = new Gaulois("Astérix", 8);
+		village.ajouterVillagois(asterix);
 		Gaulois gaulois = village.trouverVillageois(1);
 		System.out.println(gaulois);
 		gaulois = village.trouverVillageois(2);
@@ -69,22 +70,17 @@ public class Village {
 		
 		// Test de gaulois.sePresenter()
 		
-		//TODO : Maj ou pas pour Asterix / Obelix ?
 		Gaulois obelix = new Gaulois("Obélix", 25);
 		village.ajouterVillagois(obelix);
 		Gaulois doublePolemix = new Gaulois("DoublePolemix", 4);
-
-		//TODO : Sujet : Attention : dans ce TP le chef ne fait pas partie des villageois
-		village.ajouterVillagois(abraracourcix);
-		
-		
+				
 		village.afficherVillageois();
 		
-		//TODO : code plus opti ?
-		Asterix.sePresenter();
+		//TODO : code plus opti ? Boucle sur les instance de Gaulois ?
+		asterix.sePresenter();
 		obelix.sePresenter();
-		doublePolemix.sePresenter();
 		
+		doublePolemix.sePresenter();
 		abraracourcix.sePresenter();
 		
 	}
