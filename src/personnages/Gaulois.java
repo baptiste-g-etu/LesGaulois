@@ -5,6 +5,7 @@ public class Gaulois {
 	private String nom;
 	private int force;
 	private int effetPotion = 1;
+	public Village village;
 	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -47,9 +48,16 @@ public class Gaulois {
 	
 	
 	// TP 2
-	public void setVillage(Village village) {
-		// TODO Auto-generated method stub
-		
+
+	public void sePresenter() {
+		if(village == null) {
+			parler("Je suis " + nom + " et je voyage de villages en villages.");
+		}else if(village.getChef() == this) {
+			parler("Je suis " + nom + ", chef du village de " + village.getNom() + ".");			
+		}
+		else {
+			parler("Je suis " + nom + " et j'habite le village :  " + village.getNom() + ".");
+		}
 	}
 	
 	
